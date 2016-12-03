@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="../../css/bootstrap.min.css">
+	<script src="../../js/jquery.min.js"></script>
+	<script src="../../js/bootstrap.min.js"></script>
+	<script src="../../DataCollector.js"></script>
+
+	<meta charset="UTF-8">
+	<title>Atividade 1: Selecionando o Tipo de Método de Avaliação</title>
+</head>
+<body>
+<div class="container" id="texto">
+
+	<h1>Atividade 1: Selecionando o Tipo de M&eacute;todo de Avalia&ccedil;&atilde;o</h1>
+
+<p>Vamos avaliar os tipos de teste de usabilidade que podem ser considerados no contexto de uma aplica&ccedil;&atilde;o real.</p>
+
+<p>Uma equipe de alunos de p&oacute;s-gradua&ccedil;&atilde;o quer avaliar uma aplica&ccedil;&atilde;o Web que fornece um conjunto de recomenda&ccedil;&otilde;es para desenvolver aplica&ccedil;&otilde;es para usu&aacute;rios autistas. A aplica&ccedil;&atilde;o ser&aacute; usada pela equipe de desenvolvimento para identificar as recomenda&ccedil;&otilde;es. Algumas das telas da aplica&ccedil;&atilde;o s&atilde;o mostradas a seguir.</p>
+
+<p><strong>Tela Inicial</strong></p>
+
+<p><img alt="" src="images/fig-1.png" style="height:337px; width:700px" /></p>
+
+<p>&nbsp;</p>
+
+<p><strong>Tela de Registro de Recomenda&ccedil;&atilde;o</strong></p>
+
+<p><img alt="" src="images/fig-2.png" style="height:394px; width:700px" /></p>
+
+<p>&nbsp;</p>
+
+<p><strong>Tela de Busca de Recomenda&ccedil;&otilde;es</strong></p>
+
+<p><img alt="" src="images/fig-3.png" style="height:394px; width:700px" /></p>
+
+<p>&nbsp;</p>
+
+<p><strong>Tela de Visualiza&ccedil;&atilde;o de Recomenda&ccedil;&otilde;es</strong></p>
+
+<p><img alt="" src="images/fig-4.png" style="height:394px; width:700px" /></p>
+
+<p>&nbsp;</p>
+
+<p>Considere que a equipe que quer avaliar a aplica&ccedil;&atilde;o n&atilde;o tem experi&ecirc;ncia em aplicar testes de usabilidade e que possui poucos recursos para aplicar um teste. <strong>Nesse contexto, que tipo de teste voc&ecirc; recomendaria que eles fizessem?</strong></p>
+
+</div>
+
+<div id="conceito" class="modal fade" role="dialog">
+		  <div class="modal-dialog">
+
+		    <!-- Modal content-->
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal">&times;</button>
+		        <h4 class="modal-title" id="titulo-conceito"></h4>
+		      </div>
+		      <div class="modal-body">
+		        <p id="conteudo-conceito"></p>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+		      </div>
+		    </div>
+
+		  </div>
+		</div>
+
+</body>
+
+<style type="text/css">
+	body{
+		background-image: url(images/img5.jpg);
+	}
+	#texto{
+		background-color: white;
+		font-size: 20px;
+		width: 800px;
+		margin: 0px auto;
+		padding: 15px;
+
+	}
+	img{
+		display: block;    
+		margin: 0 auto;
+	}
+	
+</style>
+
+<script type="text/javascript">
+	var cHead = document.getElementById("titulo-conceito")
+	var cBody = document.getElementById("conteudo-conceito")
+
+	function carrega(titulo, conteudo) {
+		//window.alert("");
+
+		cHead.innerHTML = titulo;
+		cBody.innerHTML = conteudo;
+		$("#conceito").modal();
+	}
+
+</script>
+
+</html>
