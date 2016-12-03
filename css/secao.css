@@ -1,0 +1,210 @@
+@CHARSET "UTF-8";
+@font-face {
+    font-family: SignikaNegativeBold;
+    src: url(fonts/SignikaNegative700.ttf);
+}
+@font-face {
+    font-family: SignikaNegativeLight;
+    src: url(fonts/SignikaNegative300.ttf);
+}
+@font-face {
+    font-family: SignikaNegativeRegular;
+    src: url(fonts/SignikaNegativeregular.ttf);
+}
+@font-face {
+    font-family: SignikaNegativeSemibold;
+    src: url(fonts/SignikaNegative600.ttf);
+}
+/* General layout positioning and style*/
+
+*:focus {
+    outline: none;
+}
+body {
+    background-color: #E1E1DF;
+    margin: 0px;
+}
+div.header {
+    background-color: #1B7EBE;
+    width: 100%;
+    height: 57px;
+    overflow: hidden;
+    position: fixed;
+}
+div.header>p {
+    font-family: 'SignikaNegativeRegular';
+    font-size: 30px;
+    color: #8fdffd;
+    margin: 10px 15px 10px 40px;
+}
+div.header>p>span {
+    font-family: 'SignikaNegativeSemibold';
+    font-size: 30px;
+    color: #FFFFFF;
+    float: left;
+    padding-right: 5px;
+}
+div.header>p>span:after {
+    content: " |";
+}
+div.sub.header {
+    background-color: #E1E1DF;
+    top: 57px;
+    height: 70px;
+}
+div.sub.header>p {
+    padding: 15px 40px 0px;
+    color: #2c2c2c;
+    margin: 0px;
+}
+div.sub.header>p>span {
+    color: #035baa;
+}
+div.sub.header>p>span:before {
+    content: " ";
+}
+div.sub.header>hr {
+    margin: 10px 30px;
+    height: 2px;
+    border: none;
+    /*background-color: #bbb;*/
+}
+div.sub.header+div {
+    font-family: 'SignikaNegativeLight';
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    position: absolute;
+    top: 135px;
+    right: 0px;
+    bottom: 50px;
+    left: 0px;
+    padding-bottom: 15px;
+    display: table;
+}
+/* Helper classes */
+
+.line-clamp {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.hidden {
+    display: none !important;
+    visibility: hidden !important;
+}
+/* Resource content */
+
+div.sub.header+div>div:first-child {
+    margin-left: 30px;
+}
+div.recurso {
+    width: 300px;
+    height: 97%;
+    border: 1px solid #DFDFDF;
+    overflow: hidden;
+    margin: 0px 15px;
+    background: #FFF;
+    position: relative;
+    display: inline-block;
+    white-space: normal;
+}
+div.recurso.recomendado {
+    border: 1px solid #5d5d5d;
+}
+div.recurso>.compartilhar {
+    position: absolute;
+    width: 44px;
+    height: 44px;
+    top: 0px;
+    right: 0px;
+    background: url('images/btn-compartilhar.png') 0 0 no-repeat;
+    background-size: contain;
+}
+div.recurso>div {
+    margin: 15px 25px;
+    width: 250px;
+    display: table;
+}
+div.recurso>.video>div+div {
+    position: relative;
+    height: 201px;
+}
+div.recurso>.video>div>img {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+div.recurso>.video .thumb {
+    background: url('images/icon-video-thumbnail.png') 0 0 no-repeat;
+    background-size: contain !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 248px;
+    height: 184px;
+}
+div.recurso .title {
+    font-family: SignikaNegativeRegular;
+    margin: 17px 0px;
+    font-size: 22px;
+    color: #2c2c2c;
+    height: 55px;
+}
+div.recurso .video .abstract:before {
+    display: none;
+}
+div.recurso .texto .abstract:before {
+    background: url('images/icon-texto.png') 0 0 no-repeat;
+}
+div.recurso .dinamico .abstract:before {
+    background: url('images/icon-dinamico.png') 0 0 no-repeat;
+}
+div.recurso .html_completo .abstract:before {
+    background: url('images/icon-html_completo.png') 0 0 no-repeat;
+}
+div.recurso .imagem .abstract:before {
+    display: none;
+}
+div.recurso .modelo3d .abstract:before {
+    display: none;
+}
+div.recurso .audio .abstract:before {
+    background: url('images/icon-audio.png') 0 0 no-repeat;
+}
+div.recurso .galeria .abstract:before {
+    background: url('images/icon-galeria.png') 0 0 no-repeat;
+}
+div.recurso .apresentacao .abstract:before {
+    background: url('images/icon-apresentacao.png') 0 0 no-repeat;
+}
+div.recurso .questionario .abstract:before {
+    background: url('images/icon-questionario.png') 0 0 no-repeat;
+}
+div.recurso.recomendado .audio .abstract:before {
+    background: url('images/icon-audio-destaque.png') 0 0 no-repeat;
+}
+div.recurso.recomendado .galeria .abstract:before {
+    background: url('images/icon-galeria-destaque.png') 0 0 no-repeat;
+}
+div.recurso .abstract:before {
+    content: "";
+    width: 100%;
+    height: 200px;
+    display: block;
+    background-size: contain !important;
+}
+div.recurso .abstract {
+    font-size: 20px;
+    color: #5d5d5d;
+	height: 378px;
+    line-height: 22px;
+    -webkit-line-clamp: 10; 
+}
+div.recurso .video img,
+div.recurso .modelo3d img,
+div.recurso .imagem img {
+    max-width: 100%;
+    margin-bottom: 17px;
+}
+

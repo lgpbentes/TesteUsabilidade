@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../../../DataCollector.js"></script>
+	
+	<title>Questionário Cilindro</title>
+</head>
+<body onload="carregar('Q1-hard')">
+	<div style="display: inline-block;">
+
+		<!-- menu lateral que deve listar as questões -->
+		<div class="container" id="menu">
+			<h3>Exercício</h3>
+			<div>
+			  <a href="#" onclick="carregar('Q1-hard')" class="Q:1:H:1-1 list-group-item">Questão 1</a>
+			  <a href="#" onclick="carregar('Q2-hard')" class="Q:2:H:1-2 list-group-item">Questão 2</a>
+			  <a href="#" onclick="carregar('Q3-hard')" class="Q:3:H:1-3 list-group-item">Questão 3</a>
+			</div>
+		</div>
+
+		<div class="container" id="containerQuestion">
+
+		</div>
+
+		<div class="container" id="menuTroca">
+			<h3>Opções</h3>
+			<button type="button" id="btnTroca" class="troca btn btn-info btn-lg" onclick="carregar(multioption.id)">Trocar questão</button>
+		</div>
+
+	</div>
+
+	<!-- A partir daqui fica escondido -->
+	<!-- Inicio da div de uma questão-->
+	<div class="question" id="Q1-hard">
+		<h1 class="Q:1:H:1-1">Questão 1</h1>
+
+		<p class="Q:1:H:1-1">(UNITAU) O fato concreto que desencadeou a Segunda Guerra Mundial foi:</p>
+		<img class="Q:1:H:1-1" src="images/questao_1.png" width="100" height="100">
+		<div class="alternativas">
+			<div class="radio">
+			      <label><input class="Q:1:H:1-1" type="radio" name="1" value="A">a) A saída dos invasores alemães do território dos Sudetos, na Checoslováquia</label>
+			    </div>
+
+			    <div class="radio">
+			      <label><input class="Q:1:H:1-1" type="radio" name="1" value="B">b) A tomada do “Corredor Polonês” que desembocava na cidade-livre de Dantzig (atual Gdanki), pelos italianos</label>
+			    </div>
+
+			    <div class="radio">
+			      <label><input class="Q:1:H:1-1" type="radio" name="1" value="C">c) A invasão da Polônia por tropas nazistas e a ação da Inglaterra e da França em socorro de sua aliada, declarando guerra ao Terceiro Reich</label>
+			    </div>
+
+			    <div class="radio">
+			      <label><input class="Q:1:H:1-1" type="radio" name="1" value="D">d) A efetivação do “Anschluss”, que desmembrou a Áustria da Alemanha</label>
+			    </div>
+
+			    <div class="radio">
+			      <label><input class="Q:1:H:1-1" type="radio" name="1" value="E">e) A invasão da Polônia por tropas alemãs, quebrando o Pacto Germano-Soviético</label>
+			    </div>	
+		</div>
+		<button type="button" id="A1-hard" class="Q:1:H:1-1 btn btn-info btn-lg">Responder</button>
+		<button type="button" id="D1-hard" class="D:1:H:1-1 btn btn-info btn-lg" data-toggle="modal" data-target="#tip-Q1-hard">Sugestão</button>
+		<button type="button" id="C1-hard" class="C:1:H:1-1 btn btn-info btn-lg" data-toggle="modal" data-target="#my-content" onclick="carregarHTML('C:1:H:1-1')">Voltar ao conteúdo</button>	
+	</div>
+	<!-- Fim da div de uma questão-->
+
+	<div id="tip-Q1-hard" class="modal fade" role="dialog">
+	  <div class="modal-dialog">
+
+	    <!-- Modal content-->
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="D:1:H:1-1 close" data-dismiss="modal">&times;</button>
+	        <h4 class="modal-title">Sugestão do exercício</h4>
+	      </div>
+	      <div class="modal-body">
+	        <p>Uma sugestão de alguém que manja do assunto</p>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="D:1:H:1-1 btn btn-default " data-dismiss="modal">Fechar</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+	<!-- Inicio da div de uma questão-->
+	<div class="question" id="Q1-easy">
+		<h1 class="Q:1:E:1-1">Questão 1</h1>
+
+		<p class="Q:1:E:1-1">(UFPE) Em 24 de outubro de 1985, chefes de Estado, reunidos em Nova Yorque, comemoraram o 50° aniversário da Organização das Nações Unidas – ONU. O que representa essa organização?</p>
+		<img class="Q:1:E:1-1" src="images/questao_1.png" width="100" height="100">
+		<div class="alternativas">
+			<div class="radio">
+			      <label><input class="Q:1:E:1-1" type="radio" name="1" value="A">a) Uma associação dos países do Ocidente para o enfrentamento com os países do Oriente</label>
+			    </div>
+
+			    <div class="radio">
+			      <label><input class="Q:1:E:1-1" type="radio" name="1" value="B">b) A vitória da Liga das Nações, vigente durante a Primeira e a Segunda Guerras Mundiais</label>
+			    </div>
+
+			    <div class="radio">
+			      <label><input class="Q:1:E:1-1" type="radio" name="1" value="C">c) O fim da Guerra Fria entre o mundo capitalista e o mundo comunista</label>
+			    </div>
+
+			    <div class="radio">
+			      <label><input class="Q:1:E:1-1" type="radio" name="1" value="D">d) A descolonização da América e da África e o respectivo engajamentos políticos dos dois continentes</label>
+			    </div>
+
+			    <div class="radio">
+			      <label><input class="Q:1:E:1-1" type="radio" name="1" value="E">e) Uma força internacional acima das nações, na defesa da paz mundial, dos direitos do homem e da igualdade dos povos</label>
+			    </div>
+		</div>
+		<button type="button" id="A1-easy" class="Q:1:E:1-1 btn btn-info btn-lg">Responder</button>
+		<button type="button" id="D1-easy" class="D:1:E:1-1 btn btn-info btn-lg" data-toggle="modal" data-target="#tip">Sugestão</button>
+		<button type="button" id="C1-easy" class="C:1:E:1-1 btn btn-info btn-lg" data-toggle="modal" data-target="#my-content" onclick="carregarHTML('C:1:E:1-1')">Voltar ao conteúdo</button>
+	</div>
+	<!-- Fim da div de uma questão-->
+
+	<div id="tip-Q1-easy" class="modal fade" role="dialog">
+	  <div class="modal-dialog">
+
+	    <!-- Modal content-->
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="D:1:E:1-1 close" data-dismiss="modal">&times;</button>
+	        <h4 class="modal-title">Sugestão do exercício</h4>
+	      </div>
+	      <div class="modal-body">
+	        <p>A ONU é um órgão que facilita relações diplomática entre países, nos mais diversos assuntos.</p>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="D:1:E:1-1 btn btn-default" data-dismiss="modal">Fechar</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+	<!-- Inicio da div de uma questão-->
+	<div class="question" id="Q2-hard">
+		<h1 class="Q:2:H:1-2">Questão 2</h1>
+
+		<p class="Q:2:H:1-2">(PUC- Campinas) Em relação às causas da Primeira Guerra Mundial é correto afirmar que:</p>
+		<img class="Q:2:H:1-2" src="images/questao_1.png" width="100" height="100">
+		<div class="alternativas">
+			<div class="radio">
+			      <label><input class="Q:2:H:1-2" type="radio" name="2" value="A">a) A incapacidade dos Estados liberais em solucionar a crise econômica do século XIX colocou em xeque toda a estrutura do sistema capitalista. A instabilidade política e social das nações europeias impulsionou as disputas colonialistas e o conflito entre as potências.</label>
+			    </div>
+
+			    <div class="radio">
+			      <label><input class="Q:2:H:1-2" type="radio" name="2" value="B">b) A desigualdade de desenvolvimento das nações capitalistas europeias acentuou a rivalidade imperialista. A disputa colonial marcada por um nacionalismo agressivo e pela corrida armamentista expandiu os pontos de atrito entre as potências.</label>
+			    </div>
+
+			    <div class="radio">
+			      <label><input class="Q:2:H:1-2" type="radio" name="2" value="C">c) O sucesso da política de apaziguamento e do sistema de aliança equilibrou o sistema de forças entre as nações europeias, acirrando as lutas de conquista das colônias da África e da Ásia.</label>
+			    </div>
+
+			    <div class="radio">
+			      <label><input class="Q:2:H:1-2" type="radio" name="2" value="D">d) O expansionismo na Áustria, a invasão da Polônia pelas tropas alemãs assustaram a Inglaterra e a França, que reagiram contra a agressão declarando guerra ao inimigo.</label>
+			    </div>
+
+			    <div class="radio">
+			      <label><input class="Q:2:H:1-2" type="radio" name="2" value="E">e) O desequilíbrio entre a produção e consumo incentivou a conquista de novos mercados produtores de matérias-primas e consumidores de bens de produção reativando as rivalidades entre os países europeus e os da América do Norte.</label>
+			    </div>	
+		</div>
+		<button type="button" id="A2-hard" class="Q:2:H:1-2 btn btn-info btn-lg">Responder</button>
+		<button type="button" id="D2-hard" class="Q:2:H:1-2 btn btn-info btn-lg" data-toggle="modal" data-target="#tip-Q2-hard">Sugestão</button>
+		<button type="button" id="C2-hard" class="Q:2:H:1-2 btn btn-info btn-lg" data-toggle="modal" data-target="#my-content" onclick="carregarHTML('C:2:H:1-2')">Voltar ao conteúdo</button>
+	</div>
+	<!-- Fim da div de uma questão-->
+
+	<div id="tip-Q2-hard" class="modal fade" role="dialog">
+	  <div class="modal-dialog">
+
+	    <!-- Modal content-->
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="D:2:H:1-2 close" data-dismiss="modal">&times;</button>
+	        <h4 class="modal-title">Sugestão do exercício</h4>
+	      </div>
+	      <div class="modal-body">
+	        <p>Sugestão de alguém que manja do assunto.</p>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="D:2:H:1-2 btn btn-default" data-dismiss="modal">Fechar</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+	<!-- Inicio da div de uma questão-->
+	<div class="question" id="Q2-easy">
+		<h1 class="Q:2:E:1-2">Questão 2</h1>
+
+		<p class="Q:2:E:1-2"> Qual alternativa descreve de forma correta a participação do Brasil na Primeira Guerra Mundial?</p>
+		<img class="Q:2:E:1-2" src="images/questao_1.png" width="100" height="100">
+		<div class="alternativas">
+			<div class="radio">
+			      <label><input class="Q:2:E:1-2" type="radio" name="2" value="A">a) O Brasil participou enviando medicamentos e equipes de assistência médica para ajudar os feridos da Tríplice Entente. Também realizou missões de patrulhamento no Oceano Atlântico, utilizando embarcações militares. </label>
+			    </div>
+
+			    <div class="radio">
+			      <label><input class="Q:2:E:1-2" type="radio" name="2" value="B">b) O Brasil enviou soldados, veículos militares, armamentos e munições, atuando diretamente nos campos de batalha da Europa.</label>
+			    </div>
+
+			    <div class="radio">
+			      <label><input class="Q:2:E:1-2" type="radio" name="2" value="C">c) O Brasil ficou neutro durante todo o conflito.</label>
+			    </div>
+
+			    <div class="radio">
+			      <label><input class="Q:2:E:1-2" type="radio" name="2" value="D">d) O Brasil enviou soldados para ajudar na composição das forças militares da Tríplice Aliança.</label>
+			    </div>
+
+			    <div class="radio">
+			      <label><input class="Q:2:E:1-2" type="radio" name="2" value="E">e) O governante da época estava inviesado a participar por cooperação.</label>
+			    </div>	
+		</div>
+		<button type="button" id="A2-easy" class="Q:2:E:1-2 btn btn-info btn-lg">Responder</button>
+		<button type="button" id="D2-easy" class="Q:2:E:1-2 btn btn-info btn-lg" data-toggle="modal" data-target="#tip">Sugestão</button>
+		<button type="button" id="C2-easy" class="Q:2:E:1-2 btn btn-info btn-lg" data-toggle="modal" data-target="#my-content" onclick="carregarHTML('C:2:E:1-2')">Voltar ao conteúdo</button>
+	</div>
+	<!-- Fim da div de uma questão-->
+
+	<div id="tip-Q2-easy" class="modal fade" role="dialog">
+	  <div class="modal-dialog">
+
+	    <!-- Modal content-->
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="D:2:E:1-2 close" data-dismiss="modal">&times;</button>
+	        <h4 class="modal-title">Sugestão do exercício</h4>
+	      </div>
+	      <div class="modal-body">
+	        <p>Uma sugestão de quem manja do assunto.</p>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="D:2:E:1-2 btn btn-default" data-dismiss="modal">Fechar</button>
+	      </div>
+	    </div>
+
+	  </div>
+	</div>
+
+	<!-- Inicio da div de uma questão-->
+	<div class="question" id="Q3-hard">
+		<h1 class="Q:3:H:1-3">Questão 3</h1>
+
+		<p class="Q:3:H:1-3">(Cefet – SP) A chamada Crise de 1929 caracterizou-se por um colapso no sistema financeiro mundial no período do entreguerras, isto é, no intervalo entre a Primeira e a Segunda Guerra Mundial. </p>
+		<img class="Q:3:H:1-3" src="images/crash.jpg" width="100" height="100">
+		<p class="Q:3:H:1-3">Tal crise também é identificada com:</p>
+		<div class="alternativas">
+				<div class="radio">
+			      <label><input class="Q:3:H:1-3" type="radio" name="3" value="A">a) A Guerra Franco-Prussiana.</label>
+			    </div>
+
+			    <div class="radio">
+			      <label><input class="Q:3:H:1-3" type="radio" name="3" value="B">b) A quebra da Bolsa de Valores de São Paulo.</label>
+			    </div>
+
+			    <div class="radio">
+			      <label><input class="Q:3:H:1-3" type="radio" name="3" value="C">c) A Guerra Civil Americana.</label>
+			    </div>
+
+			    <div class="radio">
+			      <label><input class="Q:3:H:1-3" type="radio" name="3" value="D">d) A quebra da Bolsa de Valores de Nova York.</label>
+			    </div>
+
+			    <div class="radio">
+			      <label><input class="Q:3:H:1-3" type="radio" name="3" value="E">e) A Independência dos Estados Unidos.</label>
+			    </div>			
+		</div>
+		<button type="button" id="A3-hard" class="Q:3:H:1-3 btn btn-info btn-lg">Responder</button>
+		<button type="button" id="D3-hard" class="Q:3:H:1-3 btn btn-info btn-lg" data-toggle="modal" data-target="#tip-Q3-hard">Sugestão</button>
+		<button type="button" id="C3-hard" class="Q:3:H:1-3 btn btn-info btn-lg" data-toggle="modal" data-target="#my-content" onclick="carregarHTML('C:3:H:1-3')">Voltar ao conteúdo</button>
+	</div>
+	<!-- Fim da div de uma questão-->
+
+	<div id="tip-Q3-hard" class="modal fade" role="dialog">
+	  <div class="modal-dialog">
+
+	    <!-- Modal content-->
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="D:3:H:1-3 close" data-dismiss="modal">&times;</button>
+	        <h4 class="modal-title">Sugestão do exercício</h4>
+	      </div>
+	      <div class="modal-body">
+	        <p>O período foi marcado por uma grave crise econômica mundial.</p>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="D:3:H:1-3 btn btn-default" data-dismiss="modal">Fechar</button>
+	      </div>
+	    </div>
+
+	  </div>
+	</div>
+
+	<!-- Inicio da div de uma questão-->
+	<div class="question" id="Q3-easy">
+		<h1 class="Q:3:E:1-3">Questão 3</h1>
+		<p class="Q:3:E:1-3">Para conter os efeitos da depressão que ocorreu após a Crise de 1929, o governo dos Estados Unidos lançou o programa intitulado:</p>
+		<img class="Q:3:E:1-3" src="images/questao_1.png" width="100" height="100">
+		<div class="alternativas">
+				<div class="radio">
+			      <label><input class="Q:3:E:1-3" type="radio" name="3" value="A">a) Pacto de Varsóvia.</label>
+			    </div>
+
+			    <div class="radio">
+			      <label><input class="Q:3:E:1-3" type="radio" name="3" value="B">b) New Deal.</label>
+			    </div>
+
+			    <div class="radio">
+			      <label><input class="Q:3:E:1-3" type="radio" name="3" value="C">c) Acordo de 1931.</label>
+			    </div>
+
+			    <div class="radio">
+			      <label><input class="Q:3:E:1-3" type="radio" name="3" value="D">d) Projeto Manhattan.</label>
+			    </div>
+
+			    <div class="radio">
+			      <label><input class="Q:3:E:1-3" type="radio" name="3" value="E">e) Plano Marshall.</label>
+			    </div>			
+		</div>
+		<button type="button" id="A3-easy" class="Q:3:E:1-3 btn btn-info btn-lg">Responder</button>
+		<button type="button" id="D3-easy" class="Q:3:E:1-3 btn btn-info btn-lg" data-toggle="modal" data-target="#tip-Q3-easy">Sugestão</button>
+		<button type="button" id="C3-easy" class="Q:3:E:1-3 btn btn-info btn-lg" data-toggle="modal" data-target="#my-content" onclick="carregarHTML('C:3:E:1-3')">Voltar ao conteúdo</button>
+	</div>
+	<!-- Fim da div de uma questão-->
+
+	<div id="tip-Q3-easy" class="modal fade" role="dialog">
+	  <div class="modal-dialog">
+
+	    <!-- Modal content-->
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="D:3:E:1-3 close" data-dismiss="modal">&times;</button>
+	        <h4 class="modal-title">Sugestão do exercício</h4>
+	      </div>
+	      <div class="modal-body">
+	        <p>Plano econômico de novo acordo.</p>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="D:3:E:1-3 btn btn-default" data-dismiss="modal">Fechar</button>
+	      </div>
+	    </div>
+
+	  </div>
+	</div>
+
+	<!-- modal que fica escondido para trocar questão -->
+	<div class="container">
+			
+	</div>
+
+	<!-- para voltar ao conteúdo -->
+	<div id="my-content" class="modal fade" role="dialog">
+		<iframe id="content-frame" src=""></iframe>
+	</div>
+
+</body>
+<style type="text/css">
+	.question{
+		visibility: hidden;
+	}
+
+	.tip {
+		visibility: hidden;
+	}
+
+	.btn-default {
+		visibility: hidden;
+	}
+
+	.try-another {
+		visibility: hidden;
+	}
+
+	#D1-hard, #D1-easy, #D2-hard, #D2-easy, #D3-hard, #D3-easy,
+	#C1-hard, #C1-easy, #C2-hard, #C2-easy, #C3-hard, #C3-easy
+	{
+		visibility: hidden;
+	}
+
+	#menu{
+		width: 200px;
+		float: left;
+	}
+
+	#containerQuestion{
+		width: 600px;
+		float: left;
+	}
+
+	#menuTroca {
+		width: 200px;
+		float: left;
+		visibility: hidden;
+	}
+	
+	iframe {
+		width: 80%;
+		height: 100%;
+		position: relative;
+		left: 10%;
+		top: 10%;
+	}
+
+</style>
+<script type="text/javascript">
+	var containerQuestion = document.getElementById("containerQuestion");
+	var containerTroca = document.getElementById("menuTroca");
+	var time = setInterval(verificar,1000);
+
+	containerQuestion.innerHTML = document.getElementById('Q1-hard').innerHTML;
+
+	function iniciar(idMenu,idquestion){
+		var menu = document.getElementById('menu');
+		menu.innerHTML = document.getElementById(idMenu).innerHTML;
+		containerQuestion.innerHTML = document.getElementById(idquestion).innerHTML;
+	}
+
+	function verificar() {
+		console.log("idLog: "+multioption.id);
+		
+		if (multioption.status == true && multioption.length == 4) {
+			
+			document.getElementById("D"+multioption.id[0].substring(1, multioption.id[0].length)).style.visibility = 'visible';
+			document.getElementById("C"+multioption.id[0].substring(1, multioption.id[0].length)).style.visibility = 'visible';
+
+			console.log("44idLog4: "+multioption.id[2]);
+			multioption.id = multioption.id[2];
+
+			document.getElementById('menuTroca').style.visibility = "visible";	
+
+			//document.getElementById('menuTroca').addEventListener('click',carregar(''));
+		} //str.substring(1, str.length);
+		else if (multioption.status == true && multioption.length == 2) {
+			document.getElementById("D"+multioption.id[0].substring(1, multioption.id[0].length)).style.visibility = 'visible';
+			multioption.status = false;
+		} else if (multioption.status == true && multioption.length == 3) {
+			document.getElementById("D"+multioption.id[0].substring(1, multioption.id[0].length)).style.visibility = 'visible';
+			document.getElementById("C"+multioption.id[0].substring(1, multioption.id[0].length)).style.visibility = 'visible';
+			multioption.status = false;
+		}
+	}
+
+	function carregar(id) {
+		//question a ser carregada
+		var question = document.getElementById(id);
+
+		//setando container da question para a questão clicada na lista
+		containerQuestion.innerHTML = question.innerHTML;
+		document.getElementById('menuTroca').style.visibility = 'hidden';
+		multioption.status = false;
+	}
+
+	function carregarHTML(id){
+		var vet = id.split(':');
+		var index = vet[3].split('-');
+		var idcapt = index[0];
+		var iditem = index[1];
+		var link;
+		console.log("idcapt: "+idcapt);
+		var info = $.getJSON("../../../info.json", function(data) {
+			
+			console.log("dataC: " + data.chapter);
+			if(data.chapter == idcapt){
+				for (var j = 0; j < Object.keys(data['itens']).length - 1; j++) {
+					if(data['itens'][j]['id-item'] == vet[3]) {
+						link = data['itens'][j]['href'];
+						console.log(data['itens'][j]['href'],link);
+						document.getElementById('content-frame').src = '../' + link;
+						break;
+					}
+				}
+			}	
+		});
+
+		}
+</script>
+</html>

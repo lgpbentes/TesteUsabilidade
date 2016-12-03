@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../../../DataCollector.js"></script>
+
+</head>
+<body>
+	<h1>teste</h1>
+	<button type="button" id="C1-hard" class="D:1:H:1-1 btn btn-info btn-lg" data-toggle="modal" data-target="#my-content" onclick="carregarHTML('D:1:H:1-1')">Voltar ao conteúdo</button>
+	
+	<div id="my-content" class="modal fade" role="dialog">
+		<iframe  width="500" height="375"  id="content-frame" src=""></iframe>
+	</div>
+	
+	
+
+</body>
+	<script type="text/javascript">
+		
+		function carregarHTML(id){
+			
+
+		var vet = id.split(':');
+		var index = vet[3].split('-');
+		var idcapt = index[0];
+		var iditem = index[1];
+		var link;
+		var info = $.getJSON("../../../info.json", function(data) {
+			console.log(data);
+			if(data.chapter == idcapt){
+				for (var j = 0; j < Object.keys(data['itens']).length - 1; j++) {
+					if(data['itens'][j]['id-item'] == vet[3]) {
+						link = data['itens'][j]['href'];
+						console.log(data['itens'][j]['href'],link);
+						document.getElementById('content-frame').src = '../' + link;
+						break;
+					}
+				}
+			}	
+		});
+
+		}
+
+	</script>
+
+	<style type="text/css">
+		
+		iframe {
+			width: 80%;
+			height: 80%;
+		}
+
+	</style>
+</html>
