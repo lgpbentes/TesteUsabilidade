@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html>  
 <html>
 <head>
 	<meta charset="UTF-8">
@@ -7,8 +7,10 @@
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="../../../DataCollector.js"></script>
-	
-	<title>Questionário: Conceitos sobre Teste de Usabilidade</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>	 
+	<title>Questionário Cilindro</title>
 </head>
 <body onload="carregar('Q1-hard')">
 	<div style="display: inline-block;">
@@ -17,9 +19,9 @@
 		<div class="container" id="menu">
 			<h3>Exercício</h3>
 			<div>
-			  <a href="#" onclick="carregar('Q1-hard')" class="Q:1:H:1-1 list-group-item">Questão 1</a>
-			  <a href="#" onclick="carregar('Q2-hard')" class="Q:2:H:1-2 list-group-item">Questão 2</a>
-			  <a href="#" onclick="carregar('Q3-hard')" class="Q:3:H:1-3 list-group-item">Questão 3</a>
+			  <a href="#" onclick="carregarList(multioption.question[0])" class="Q:1:H:1-1 list-group-item">Questão 1</a>
+			  <a href="#" onclick="carregarList(multioption.question[1])" class="Q:2:H:1-2 list-group-item">Questão 2</a>
+			  <a href="#" onclick="carregarList(multioption.question[2])" class="Q:3:H:1-3 list-group-item">Questão 3</a>
 			</div>
 		</div>
 
@@ -27,9 +29,19 @@
 
 		</div>
 
-		<div class="container" id="menuTroca">
+		<div class="container" id="menuTroca1">
 			<h3>Opções</h3>
-			<button type="button" id="btnTroca" class="troca btn btn-info btn-lg" onclick="carregar(multioption.id)">Trocar questão</button>
+			<button type="button" id="btnTroca" class="troca-Q1 btn btn-info btn-lg" onclick="carregar(multioption.id[2])">Trocar questão</button>
+		</div>
+
+		<div class="container" id="menuTroca2">
+			<h3>Opções</h3>
+			<button type="button" id="btnTroca" class="troca-Q2 btn btn-info btn-lg" onclick="carregar(multioption.id[2])">Trocar questão</button>
+		</div>
+
+		<div class="container" id="menuTroca3">
+			<h3>Opções</h3>
+			<button type="button" id="btnTroca" class="troca-Q3 btn btn-info btn-lg" onclick="carregar(multioption.id[2])">Trocar questão</button>
 		</div>
 
 	</div>
@@ -39,32 +51,33 @@
 	<div class="question" id="Q1-hard">
 		<h1 class="Q:1:H:1-1">Questão 1</h1>
 
-		<p class="Q:1:H:1-1">Testes de usabilidade s&atilde;o um tipo de avalia&ccedil;&atilde;o para identificar problemas de usabilidade. Nesse contexto, a &uacute;nica alternativa que n&atilde;o apresenta uma caracter&iacute;stica de testes de usabilidade &eacute;:</p>
+		<p class="Q:1:H:1-1">Um questionário é um método indireto que coleta a opinião dos usuários sobre a interface. Nesse contexto, a única informação que um questionário não permite capturar é:</p>
+
 		<img class="Q:1:H:1-1" src="images/questao_1.png" width="100" height="100">
 		<div class="alternativas">
 			<div class="radio">
-			      <label><input class="Q:1:H:1-1" type="radio" name="1" value="A">a) Permite identificar defeitos reais que afetam usuários durante o uso de uma aplicação.</label>
+			      <label><input class="Q:1:H:1-1:A" type="radio" name="1" value="A">a) Informações subjetivas sobre a qualidade da interface.</label>
 			    </div>
 
 			    <div class="radio">
-			      <label><input class="Q:1:H:1-1" type="radio" name="1" value="B">b) Pode ter um custo mais elevado, considerando que pode ser necessário utilizar equipamentos para sua realização.</label>
+			      <label><input class="Q:1:H:1-1:B" type="radio" name="1" value="B">b) Dados sobre o perfil dos usuários.</label>
 			    </div>
 
 			    <div class="radio">
-			      <label><input class="Q:1:H:1-1" type="radio" name="1" value="C">c) São os usuários que indicam os problemas de usabilidade.</label>
+			      <label><input class="Q:1:H:1-1:C" type="radio" name="1" value="C">c) Informações sobre quais problemas os usuários experimentaram.</label>
 			    </div>
 
 			    <div class="radio">
-			      <label><input class="Q:1:H:1-1" type="radio" name="1" value="D">d) É baseada na análise de especialistas, considerando regras específicas.</label>
+			      <label><input class="Q:1:H:1-1:D" type="radio" name="1" value="D">d) Explicações de porque o usuário tomou uma ação.</label>
 			    </div>
 
 			    <div class="radio">
-			      <label><input class="Q:1:H:1-1" type="radio" name="1" value="E">e) Pode utilizar o monitoramento de respostas fisiológicas.</label>
+			      <label><input class="Q:1:H:1-1:E" type="radio" name="1" value="E">e) O log do sistema indicando as coordenadas do mouse no momento em que um problema aconteceu.</label>
 			    </div>	
 		</div>
 		<button type="button" id="A1-hard" class="Q:1:H:1-1 btn btn-info btn-lg">Responder</button>
 		<button type="button" id="D1-hard" class="D:1:H:1-1 btn btn-info btn-lg" data-toggle="modal" data-target="#tip-Q1-hard">Sugestão</button>
-		<button type="button" id="C1-hard" class="C:1:H:1-1 btn btn-info btn-lg" data-toggle="modal" data-target="#my-content" onclick="carregarHTML('C:1:H:1-1')">Voltar ao conteúdo</button>	
+		<button type="button" id="C1-hard" class="C:1:H:1-1 btn btn-info btn-lg" data-toggle="modal" data-target="#my-contentQ1">Voltar ao conteúdo</button>	
 	</div>
 	<!-- Fim da div de uma questão-->
 
@@ -75,10 +88,10 @@
 	    <div class="modal-content">
 	      <div class="modal-header">
 	        <button type="button" class="D:1:H:1-1 close" data-dismiss="modal">&times;</button>
-	        <h4 class="modal-title">Sugestão do exercício</h4>
+	        <h4 class="modal-title">Sugestão para Questão 1</h4>
 	      </div>
 	      <div class="modal-body">
-	        <p>Testes de usabilidade s&atilde;o m&eacute;todos onde os problemas s&atilde;o encontrados atrav&eacute;s da observa&ccedil;&atilde;o e da intera&ccedil;&atilde;o com os usu&aacute;rios enquanto realizam algumas tarefas ou comentam a interface.</p>
+	        <p>Um questionário é um formulário com perguntas a serem respondidas que permite coletar rapidamente dados de muitos usuários. Geralmente é um meio rápido, fácil e barato se obter e analisar dados em maior escala.</p>
 	      </div>
 	      <div class="modal-footer">
 	        <button type="button" class="D:1:H:1-1 btn btn-default " data-dismiss="modal">Fechar</button>
@@ -91,32 +104,40 @@
 	<div class="question" id="Q1-easy">
 		<h1 class="Q:1:E:1-1">Questão 1</h1>
 
-		<p class="Q:1:E:1-1"> Aqui vem a descrição</p>
+		<p class="Q:1:E:1-1">Usabilidade é um atributo de qualidade relacionado à facilidade do uso de algo. Nesse contexto, considere as seguintes características:</p>
+		<ol class="Q:1:E:1-1" type="I">
+  			<li>Ser fácil de aprender.</li>
+  			<li>Ser fácil de usar.</li>
+  			<li>Ser útil apenas para usuários experientes.</li>
+  			<li>Ter muita informação na tela ao mesmo tempo.</li>
+  			<li>Não ter falhas ou evita-las.</li>
+		</ol>  
+		<p class="Q:1:E:1-1">É correto, que as características que tornam uma aplicação usável são:</p>
 		<img class="Q:1:E:1-1" src="images/questao_1.png" width="100" height="100">
 		<div class="alternativas">
 			<div class="radio">
-			      <label><input class="Q:1:E:1-1" type="radio" name="1" value="A">a) </label>
+			      <label><input class="Q:1:E:1-1:A" type="radio" name="1" value="A">a) I, II e III</label>
 			    </div>
 
 			    <div class="radio">
-			      <label><input class="Q:1:E:1-1" type="radio" name="1" value="B">b) </label>
+			      <label><input class="Q:1:E:1-1:B" type="radio" name="1" value="B">b) I, II e V</label>
 			    </div>
 
 			    <div class="radio">
-			      <label><input class="Q:1:E:1-1" type="radio" name="1" value="C">c) </label>
+			      <label><input class="Q:1:E:1-1:C" type="radio" name="1" value="C">c) II e IV</label>
 			    </div>
 
 			    <div class="radio">
-			      <label><input class="Q:1:E:1-1" type="radio" name="1" value="D">d) </label>
+			      <label><input class="Q:1:E:1-1:D" type="radio" name="1" value="D">d) III e IV</label>
 			    </div>
 
 			    <div class="radio">
-			      <label><input class="Q:1:E:1-1" type="radio" name="1" value="E">e) </label>
+			      <label><input class="Q:1:E:1-1:E" type="radio" name="1" value="E">e) III, IV e V</label>
 			    </div>
 		</div>
 		<button type="button" id="A1-easy" class="Q:1:E:1-1 btn btn-info btn-lg">Responder</button>
 		<button type="button" id="D1-easy" class="D:1:E:1-1 btn btn-info btn-lg" data-toggle="modal" data-target="#tip">Sugestão</button>
-		<button type="button" id="C1-easy" class="C:1:E:1-1 btn btn-info btn-lg" data-toggle="modal" data-target="#my-content" onclick="carregarHTML('C:1:E:1-1')">Voltar ao conteúdo</button>
+		<button type="button" id="C1-easy" class="C:1:E:1-1 btn btn-info btn-lg" data-toggle="modal" data-target="#my-contentQ1">Voltar ao conteúdo</button>
 	</div>
 	<!-- Fim da div de uma questão-->
 
@@ -130,7 +151,7 @@
 	        <h4 class="modal-title">Sugestão do exercício</h4>
 	      </div>
 	      <div class="modal-body">
-	        <p>Dica da questao</p>
+	        <p>A usabilidade em meios digitais, como na internet, é um termo muito utilizado também nas novas mídias. A necessidade de entender as necessidades dos interagentes no ambiente virtual facilita a compreensão do conteúdo disponibilizado, fazendo-os autossuficientes. Até quem tem dificuldade motora ou problemas de navegação por falta de conhecimento técnico poderá alcançar o que deseja no sistema de informação, se os processos de usabilidade forem respeitados, deixando o usuário da aplicação mais à vontade, mais independente.</p>
 	      </div>
 	      <div class="modal-footer">
 	        <button type="button" class="D:1:E:1-1 btn btn-default" data-dismiss="modal">Fechar</button>
@@ -143,32 +164,32 @@
 	<div class="question" id="Q2-hard">
 		<h1 class="Q:2:H:1-2">Questão 2</h1>
 
-		<p class="Q:2:H:1-2">Um question&aacute;rio &eacute; um m&eacute;todo indireto que coleta a opini&atilde;o dos usu&aacute;rios sobre a interface. Nesse contexto, a &uacute;nica informa&ccedil;&atilde;o que um question&aacute;rio n&atilde;o permite capturar &eacute;:</p>
+		<p class="Q:2:H:1-2">Testes de usabilidade são um tipo de avaliação para identificar problemas de usabilidade. Nesse contexto, a única alternativa que não apresenta uma característica de testes de usabilidade é:</p>
 		<img class="Q:2:H:1-2" src="images/questao_1.png" width="100" height="100">
 		<div class="alternativas">
 			<div class="radio">
-			      <label><input class="Q:2:H:1-2" type="radio" name="2" value="A">a) Informações subjetivas sobre a qualidade da interface.</label>
+			      <label><input class="Q:2:H:1-2:A" type="radio" name="2" value="A">a) Permite identificar defeitos reais que afetam usuários durante o uso de uma aplicação.</label>
 			    </div>
 
 			    <div class="radio">
-			      <label><input class="Q:2:H:1-2" type="radio" name="2" value="B">b) Dados sobre o perfil dos usuários</label>
+			      <label><input class="Q:2:H:1-2:B" type="radio" name="2" value="B">b) Pode ter um custo mais elevado, considerando que pode ser necessário utilizar equipamentos para sua realização.</label>
 			    </div>
 
 			    <div class="radio">
-			      <label><input class="Q:2:H:1-2" type="radio" name="2" value="C">c) Informações sobre quais problemas os usuários experimentaram.</label>
+			      <label><input class="Q:2:H:1-2:C" type="radio" name="2" value="C">c) São os usuários que indicam os problemas de usabilidade.</label>
 			    </div>
 
 			    <div class="radio">
-			      <label><input class="Q:2:H:1-2" type="radio" name="2" value="D">d) Explicações de porque o usuário tomou uma ação.</label>
+			      <label><input class="Q:2:H:1-2:D" type="radio" name="2" value="D">d) É baseada na análise de especialistas, considerando regras específicas.</label>
 			    </div>
 
 			    <div class="radio">
-			      <label><input class="Q:2:H:1-2" type="radio" name="2" value="E">e) O log do sistema indicando as coordenadas do mouse no momento em que um problema aconteceu.</label>
-			    </div>
+			      <label><input class="Q:2:H:1-2:E" type="radio" name="2" value="E">e) Pode utilizar o monitoramento de respostas fisiológicas.</label>
+			    </div>	
 		</div>
 		<button type="button" id="A2-hard" class="Q:2:H:1-2 btn btn-info btn-lg">Responder</button>
-		<button type="button" id="D2-hard" class="Q:2:H:1-2 btn btn-info btn-lg" data-toggle="modal" data-target="#tip-Q2-hard">Sugestão</button>
-		<button type="button" id="C2-hard" class="Q:2:H:1-2 btn btn-info btn-lg" data-toggle="modal" data-target="#my-content" onclick="carregarHTML('C:2:H:1-2')">Voltar ao conteúdo</button>
+		<button type="button" id="D2-hard" class="D:2:H:1-2 btn btn-info btn-lg" data-toggle="modal" data-target="#tip-Q2-hard">Sugestão</button>
+		<button type="button" id="C2-hard" class="C:2:H:1-2 btn btn-info btn-lg" data-toggle="modal" data-target="#my-contentQ2">Voltar ao conteúdo</button>
 	</div>
 	<!-- Fim da div de uma questão-->
 
@@ -179,10 +200,10 @@
 	    <div class="modal-content">
 	      <div class="modal-header">
 	        <button type="button" class="D:2:H:1-2 close" data-dismiss="modal">&times;</button>
-	        <h4 class="modal-title">Sugestão do exercício</h4>
+	        <h4 class="modal-title">Sugestão para questão 2</h4>
 	      </div>
 	      <div class="modal-body">
-	        <p>Um question&aacute;rio &eacute; um formul&aacute;rio com perguntas a serem respondidas que permite coletar rapidamente dados de muitos usu&aacute;rios. Geralmente &eacute; um meio r&aacute;pido, f&aacute;cil e barato se obter e analisar dados em maior escala</p>
+	        <p>Testes de usabilidade são métodos onde os problemas são encontrados através da observação e da interação com os usuários enquanto realizam algumas tarefas ou comentam a interface.</p>
 	      </div>
 	      <div class="modal-footer">
 	        <button type="button" class="D:2:H:1-2 btn btn-default" data-dismiss="modal">Fechar</button>
@@ -195,32 +216,32 @@
 	<div class="question" id="Q2-easy">
 		<h1 class="Q:2:E:1-2">Questão 2</h1>
 
-		<p class="Q:2:E:1-2"> Descricao</p>
+		<p class="Q:2:E:1-2"> Existem vários métodos para avaliar a qualidade de uso propostos na literatura. Cada método atende melhor a certos objetivos de avaliação, orienta explicita ou implicitamente quando e onde os dados devem ser coletados, como eles devem ser analisados, e quais critérios de qualidade de uso (usabilidade, experiência do usuário, acessibilidade ou comunicabilidade) sua análise privilegia. Nesse contexto, no tipo de avaliação chamado Teste de Usabilidade os problemas são encontrados:</p>
 		<img class="Q:2:E:1-2" src="images/questao_1.png" width="100" height="100">
 		<div class="alternativas">
 			<div class="radio">
-			      <label><input class="Q:2:E:1-2" type="radio" name="2" value="A">a)  </label>
+			      <label><input class="Q:2:E:1-2:A" type="radio" name="2" value="A">a) através da aplicação de um questionário a especialistas de usabilidade. </label>
 			    </div>
 
 			    <div class="radio">
-			      <label><input class="Q:2:E:1-2" type="radio" name="2" value="B">b) </label>
+			      <label><input class="Q:2:E:1-2:B" type="radio" name="2" value="B">b) através da observação e da interação com os usuários enquanto realizam algumas tarefas ou comentam a interface.</label>
 			    </div>
 
 			    <div class="radio">
-			      <label><input class="Q:2:E:1-2" type="radio" name="2" value="C">c) </label>
+			      <label><input class="Q:2:E:1-2:C" type="radio" name="2" value="C">c) de forma automatizada, sem precisar que ninguém use o sistema.</label>
 			    </div>
 
 			    <div class="radio">
-			      <label><input class="Q:2:E:1-2" type="radio" name="2" value="D">d) </label>
+			      <label><input class="Q:2:E:1-2:D" type="radio" name="2" value="D">d) ao avaliar critérios, enquanto um especialista observa a resposta do sistema com base em entradas pré-definidas.</label>
 			    </div>
 
 			    <div class="radio">
-			      <label><input class="Q:2:E:1-2" type="radio" name="2" value="E">e) </label>
+			      <label><input class="Q:2:E:1-2:E" type="radio" name="2" value="E">e) perguntando dos usuários suas expectativas antes de usar o sistema.</label>
 			    </div>	
 		</div>
 		<button type="button" id="A2-easy" class="Q:2:E:1-2 btn btn-info btn-lg">Responder</button>
-		<button type="button" id="D2-easy" class="Q:2:E:1-2 btn btn-info btn-lg" data-toggle="modal" data-target="#tip">Sugestão</button>
-		<button type="button" id="C2-easy" class="Q:2:E:1-2 btn btn-info btn-lg" data-toggle="modal" data-target="#my-content" onclick="carregarHTML('C:2:E:1-2')">Voltar ao conteúdo</button>
+		<button type="button" id="D2-easy" class="D:2:E:1-2 btn btn-info btn-lg" data-toggle="modal" data-target="#tip">Sugestão</button>
+		<button type="button" id="C2-easy" class="C:2:E:1-2 btn btn-info btn-lg" data-toggle="modal" data-target="#my-contentQ2">Voltar ao conteúdo</button>
 	</div>
 	<!-- Fim da div de uma questão-->
 
@@ -231,10 +252,10 @@
 	    <div class="modal-content">
 	      <div class="modal-header">
 	        <button type="button" class="D:2:E:1-2 close" data-dismiss="modal">&times;</button>
-	        <h4 class="modal-title">Sugestão do exercício</h4>
+	        <h4 class="modal-title">Sugestão para questão 2</h4>
 	      </div>
 	      <div class="modal-body">
-	        <p>Uma sugestão de quem manja do assunto.</p>
+	        <p>Os testes de usabilidade fornecem dados sobre situações em que os usuários realizam suas atividades, com ou sem apoio de sistemas interativos. Através do registro dos dados observados, esses métodos permitem identificar problemas reais que os usuários enfrentaram durante sua experiência de uso do sistema sendo avaliado. O avaliador pode observar os usuários em contexto ou em laboratório.</p>
 	      </div>
 	      <div class="modal-footer">
 	        <button type="button" class="D:2:E:1-2 btn btn-default" data-dismiss="modal">Fechar</button>
@@ -248,34 +269,33 @@
 	<div class="question" id="Q3-hard">
 		<h1 class="Q:3:H:1-3">Questão 3</h1>
 
-		<p class="Q:3:H:1-3">Existem v&aacute;rios tipos de m&eacute;todos de teste de usabilidade. Estes m&eacute;todos podem ser baseados em observa&ccedil;&atilde;o, baseados em perguntas ou baseados na avalia&ccedil;&atilde;o atrav&eacute;s da monitora&ccedil;&atilde;o de respostas fisiol&oacute;gicas. Nesse contexto, o m&eacute;todo baseado em observa&ccedil;&atilde;o onde se solicita a usu&aacute;rios a realiza&ccedil;&atilde;o de algumas tarefas t&iacute;picas previamente estabelecidas, e se observa a sua intera&ccedil;&atilde;o com o sistema sem que o usu&aacute;rio fale &eacute; chamado de:</p>
-
-		<img class="Q:2:E:1-2" src="images/questao_1.png" width="100" height="100">
-		
+		<p class="Q:3:H:1-3">A curto prazo, avaliar a qualidade de uso e corrigir os problemas identificados contribuem para aumentar a produtividade dos usuários, diminuir o número e a gravidade dos erros cometidos durante o uso, e aumentar a satisfação dos usuários. </p>
+		<p class="Q:3:H:1-3">Considere que uma equipe de desenvolvimento está pensando em avaliar a usabilidade de um novo aplicativo. A equipe tem o contato de usuários preparados para experimentar uma aplicação e apontar, enquanto realizam as tarefas, os problemas que vivenciam. No entanto, também é necessário identificar o momento exato e a tela do sistema em que um problema de usabilidade aconteceu, de modo a enviar informações para o time para facilitar a correção dos problemas. Nesse contexto, os métodos que permitem coletar as informações que a equipe precisa são:</p>
+		<img class="Q:3:H:1-3" src="images/questao_1.png" width="100" height="100">
 		<div class="alternativas">
 				<div class="radio">
-			      <label><input class="Q:3:H:1-3" type="radio" name="3" value="A">a) ThinkAloud</label>
+			      <label><input class="Q:3:H:1-3:A" type="radio" name="3" value="A">a) Observação e Entrevista.</label>
 			    </div>
 
 			    <div class="radio">
-			      <label><input class="Q:3:H:1-3" type="radio" name="3" value="B">b) Entrevista</label>
+			      <label><input class="Q:3:H:1-3:B" type="radio" name="3" value="B">b) Think Aloud e Logs do Sistema.</label>
 			    </div>
 
 			    <div class="radio">
-			      <label><input class="Q:3:H:1-3" type="radio" name="3" value="C">c) Ensaios de Interação</label>
+			      <label><input class="Q:3:H:1-3:C" type="radio" name="3" value="C">c) Think Aloud e Observação.</label>
 			    </div>
 
 			    <div class="radio">
-			      <label><input class="Q:3:H:1-3" type="radio" name="3" value="D">d) Questionario</label>
+			      <label><input class="Q:3:H:1-3:D" type="radio" name="3" value="D">d) Logs do Sistema e Eye Tracking.</label>
 			    </div>
 
 			    <div class="radio">
-			      <label><input class="Q:3:H:1-3" type="radio" name="3" value="E">e) Eye Tracking</label>
+			      <label><input class="Q:3:H:1-3:E" type="radio" name="3" value="E">e) Eye Tracking e Questionário.</label>
 			    </div>			
 		</div>
 		<button type="button" id="A3-hard" class="Q:3:H:1-3 btn btn-info btn-lg">Responder</button>
-		<button type="button" id="D3-hard" class="Q:3:H:1-3 btn btn-info btn-lg" data-toggle="modal" data-target="#tip-Q3-hard">Sugestão</button>
-		<button type="button" id="C3-hard" class="Q:3:H:1-3 btn btn-info btn-lg" data-toggle="modal" data-target="#my-content" onclick="carregarHTML('C:3:H:1-3')">Voltar ao conteúdo</button>
+		<button type="button" id="D3-hard" class="D:3:H:1-3 btn btn-info btn-lg" data-toggle="modal" data-target="#tip-Q3-hard">Sugestão</button>
+		<button type="button" id="C3-hard" class="C:3:H:1-3 btn btn-info btn-lg" data-toggle="modal" data-target="#my-contentQ3">Voltar ao conteúdo</button>
 	</div>
 	<!-- Fim da div de uma questão-->
 
@@ -286,10 +306,10 @@
 	    <div class="modal-content">
 	      <div class="modal-header">
 	        <button type="button" class="D:3:H:1-3 close" data-dismiss="modal">&times;</button>
-	        <h4 class="modal-title">Sugestão do exercício</h4>
+	        <h4 class="modal-title">Sugestão para a Questão 3</h4>
 	      </div>
 	      <div class="modal-body">
-	        <p>T&eacute;cnicas baseadas em observa&ccedil;&atilde;o t&ecirc;m por fundamento a observa&ccedil;&atilde;o do usu&aacute;rio interagindo com o sistema e podem ser: Ensaios de Intera&ccedil;&atilde;o, Thinking Aloud e Avalia&ccedil;&atilde;o Cooperativa, An&aacute;lise Automatizada de Protocolos e Walkthroughs P&oacute;s-Tarefa.</p>
+	        <p>Os testes de usabilidade fornecem dados sobre situações em que os usuários realizam suas atividades, com ou sem apoio de sistemas interativos. Através do registro dos dados observados, esses métodos permitem identificar problemas reais que os usuários enfrentaram durante sua experiência de uso do sistema sendo avaliado. O avaliador pode observar os usuários em contexto ou em laboratório.</p>
 	      </div>
 	      <div class="modal-footer">
 	        <button type="button" class="D:3:H:1-3 btn btn-default" data-dismiss="modal">Fechar</button>
@@ -302,32 +322,32 @@
 	<!-- Inicio da div de uma questão-->
 	<div class="question" id="Q3-easy">
 		<h1 class="Q:3:E:1-3">Questão 3</h1>
-		<p class="Q:3:E:1-3">Descricao</p>
+		<p class="Q:3:E:1-3">Existem vários tipos de métodos de teste de usabilidade. Estes métodos podem ser baseados em observação, baseados em perguntas ou baseados na avaliação através da monitoração de respostas fisiológicas. Nesse contexto, o método baseado em observação onde se solicita a usuários a realização de algumas tarefas típicas previamente estabelecidas, e se observa (fazendo anotações) a sua interação com o sistema sem que o usuário fale é chamado de:</p>
 		<img class="Q:3:E:1-3" src="images/questao_1.png" width="100" height="100">
 		<div class="alternativas">
 				<div class="radio">
-			      <label><input class="Q:3:E:1-3" type="radio" name="3" value="A">a) </label>
+			      <label><input class="Q:3:E:1-3:A" type="radio" name="3" value="A">a) ThinkAloud</label>
 			    </div>
 
 			    <div class="radio">
-			      <label><input class="Q:3:E:1-3" type="radio" name="3" value="B">b) </label>
+			      <label><input class="Q:3:E:1-3:B" type="radio" name="3" value="B">b) Entrevista</label>
 			    </div>
 
 			    <div class="radio">
-			      <label><input class="Q:3:E:1-3" type="radio" name="3" value="C">c) </label>
+			      <label><input class="Q:3:E:1-3:C" type="radio" name="3" value="C">c) Ensaios de Interação</label>
 			    </div>
 
 			    <div class="radio">
-			      <label><input class="Q:3:E:1-3" type="radio" name="3" value="D">d) </label>
+			      <label><input class="Q:3:E:1-3:D" type="radio" name="3" value="D">d) Questionario</label>
 			    </div>
 
 			    <div class="radio">
-			      <label><input class="Q:3:E:1-3" type="radio" name="3" value="E">e) </label>
+			      <label><input class="Q:3:E:1-3:E" type="radio" name="3" value="E">e) Eye Tracking</label>
 			    </div>			
 		</div>
 		<button type="button" id="A3-easy" class="Q:3:E:1-3 btn btn-info btn-lg">Responder</button>
-		<button type="button" id="D3-easy" class="Q:3:E:1-3 btn btn-info btn-lg" data-toggle="modal" data-target="#tip-Q3-easy">Sugestão</button>
-		<button type="button" id="C3-easy" class="Q:3:E:1-3 btn btn-info btn-lg" data-toggle="modal" data-target="#my-content" onclick="carregarHTML('C:3:E:1-3')">Voltar ao conteúdo</button>
+		<button type="button" id="D3-easy" class="D:3:E:1-3 btn btn-info btn-lg" data-toggle="modal" data-target="#tip-Q3-easy">Sugestão</button>
+		<button type="button" id="C3-easy" class="C:3:E:1-3 btn btn-info btn-lg" data-toggle="modal" data-target="#my-contentQ3">Voltar ao conteúdo</button>
 	</div>
 	<!-- Fim da div de uma questão-->
 
@@ -338,10 +358,10 @@
 	    <div class="modal-content">
 	      <div class="modal-header">
 	        <button type="button" class="D:3:E:1-3 close" data-dismiss="modal">&times;</button>
-	        <h4 class="modal-title">Sugestão do exercício</h4>
+	        <h4 class="modal-title">Sugestão para a Questão 3</h4>
 	      </div>
 	      <div class="modal-body">
-	        <p>Plano econômico de novo acordo.</p>
+	        <p>Técnicas baseadas em observação têm por fundamento a observação do usuário interagindo com o sistema e podem ser: Ensaios de Interação, Thinking Aloud e Avaliação Cooperativa, Análise Automatizada de Protocolos e Walkthroughs Pós-Tarefa.</p>
 	      </div>
 	      <div class="modal-footer">
 	        <button type="button" class="D:3:E:1-3 btn btn-default" data-dismiss="modal">Fechar</button>
@@ -357,9 +377,65 @@
 	</div>
 
 	<!-- para voltar ao conteúdo -->
-	<div id="my-content" class="modal fade" role="dialog">
-		<iframe id="content-frame" src=""></iframe>
+	<div id="my-contentQ1" class="modal fade" role="dialog">
+  	<div class="modal-dialog modal-lg">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Conteúdo "Efeitos Da Primeira Guerra Mundial </h4>
+      </div>
+    <div class="modal-body">
+		<iframe id="content-frame" src="../c1-1.html"></iframe>
 	</div>
+	     <div class="modal-footer">
+           <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+    </div>
+    </div>
+    </div>
+
+
+    	<!-- para voltar ao conteúdo -->
+	<div id="my-contentQ2" class="modal fade" role="dialog">
+  	<div class="modal-dialog modal-lg">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Conteúdo "Efeitos Da Primeira Guerra Mundial </h4>
+      </div>
+    <div class="modal-body">
+		<iframe id="content-frame" src="../c1-1.html"></iframe>
+	</div>
+	     <div class="modal-footer">
+           <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    	<!-- para voltar ao conteúdo -->
+	<div id="my-contentQ3" class="modal fade" role="dialog">
+  	<div class="modal-dialog modal-lg">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Conteúdo "Efeitos Da Primeira Guerra Mundial </h4>
+      </div>
+    <div class="modal-body">
+		<iframe id="content-frame" src="../c1-1.html"></iframe>
+	</div>
+	     <div class="modal-footer">
+           <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+    </div>
+    </div>
+    </div>
 
 </body>
 <style type="text/css">
@@ -395,18 +471,15 @@
 		float: left;
 	}
 
-	#menuTroca {
+	#menuTroca1,#menuTroca2,#menuTroca3 {
 		width: 200px;
 		float: left;
 		visibility: hidden;
 	}
 	
 	iframe {
-		width: 80%;
-		height: 100%;
-		position: relative;
-		left: 10%;
-		top: 10%;
+		width: 1100px;
+		height: 700px;
 	}
 
 </style>
@@ -424,17 +497,22 @@
 	}
 
 	function verificar() {
-		console.log("idLog: "+multioption.id);
+		//console.log("idLog: "+multioption.id);
 		
 		if (multioption.status == true && multioption.length == 4) {
-			
+			//console.log("D"+multioption.id[0].substring(1, multioption.id[0].length));
+			//console.log("D"+multioption.id);
+			//console.log("D2"+multioption.id[0]);			
+			//console.log("T" + multioption.id[0].substring(1, multioption.id[0].length));
 			document.getElementById("D"+multioption.id[0].substring(1, multioption.id[0].length)).style.visibility = 'visible';
 			document.getElementById("C"+multioption.id[0].substring(1, multioption.id[0].length)).style.visibility = 'visible';
 
-			console.log("44idLog4: "+multioption.id[2]);
-			multioption.id = multioption.id[2];
+			//console.log("44idLog4: "+multioption.id[2]);
+			//var bkp = multioption.id
+			//multioption.id = multioption.id[2];
+			//console.log("charAt: "+ multioption.id.charAt(1));
 
-			document.getElementById('menuTroca').style.visibility = "visible";	
+			document.getElementById("menuTroca" + multioption.id[2].charAt(1)).style.visibility = "visible";	
 
 			//document.getElementById('menuTroca').addEventListener('click',carregar(''));
 		} //str.substring(1, str.length);
@@ -450,11 +528,25 @@
 
 	function carregar(id) {
 		//question a ser carregada
+		console.log ("\n\nLOADING: " + id + "\n\n");
 		var question = document.getElementById(id);
-
 		//setando container da question para a questão clicada na lista
 		containerQuestion.innerHTML = question.innerHTML;
-		document.getElementById('menuTroca').style.visibility = 'hidden';
+		console.log('\n\nMENU TROCA'+multioption.id[2].charAt(1));
+		console.log('menuTroca'+multioption.id[2].charAt(1));
+		document.getElementById('menuTroca'+multioption.id[2].charAt(1)).style.visibility = 'hidden';
+		multioption.status = false;
+	}
+	function carregarList(id) {
+		//question a ser carregada
+		console.log ("\n\nLOADING: " + id + "\n\n");		
+		var question = document.getElementById(id);
+		console.log('\n\nMENU TROCA'+multioption.id+"\nTAM:"+ multioption.length + "\n\n");
+		if (multioption.length == 4){
+			document.getElementById('menuTroca'+multioption.id[2].charAt(1)).style.visibility = 'hidden';
+		}
+		//setando container da question para a questão clicada na lista
+		containerQuestion.innerHTML = question.innerHTML;
 		multioption.status = false;
 	}
 
@@ -464,7 +556,7 @@
 		var idcapt = index[0];
 		var iditem = index[1];
 		var link;
-		console.log("idcapt: "+idcapt);
+		//console.log("idcapt: "+idcapt);
 		var info = $.getJSON("../../../info.json", function(data) {
 			
 			console.log("dataC: " + data.chapter);
@@ -472,7 +564,7 @@
 				for (var j = 0; j < Object.keys(data['itens']).length - 1; j++) {
 					if(data['itens'][j]['id-item'] == vet[3]) {
 						link = data['itens'][j]['href'];
-						console.log(data['itens'][j]['href'],link);
+						//console.log(data['itens'][j]['href'],link);
 						document.getElementById('content-frame').src = '../' + link;
 						break;
 					}
