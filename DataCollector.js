@@ -36,6 +36,13 @@ function overflowTimer(){
         idClass = "Q:3:E:1-3";
     }
 
+    if (idClass == "D:1:H:1-1 close" || idClass == "C:1:H:1-1 close") idClass = "Q:1:H:1-1";
+    else if (idClass == "D:2:H:1-2 close" || idClass == "C:2:H:1-2 close") idClass = "Q:2:H:1-2";
+    else if (idClass == "D:3:H:1-3 close" || idClass == "C:3:H:1-3 close") idClass = "Q:3:H:1-3";
+    else if (idClass == "D:1:E:1-1 close") idClass = "Q:1:E:1-1";
+    else if (idClass == "D:2:E:1-2 close") idClass = "Q:3:E:1-2";
+    else if (idClass == "D:3:E:1-3 close") idClass = "Q:3:E:1-3";
+
     if(debug) {
        /* console.log("-------after two seconds----------");
         console.log("DataCollector timestamp: "+timestamp);

@@ -1,0 +1,55 @@
+<html>
+	<head>
+        <title>Setup</title>
+		<meta name="viewport" content="width = device-width, height = device-height, maximum-scale = 1.0, minimum-scale = 1.0" />
+		<meta http-equiv="Content-Type" content="application/html; charset=UTF-8" />
+	<script src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="DataCollector.js"></script>
+	  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="form-group">
+  				<label for="ip">Ip Service</label>
+  				<input type="text" class="form-control" id="ip">
+			</div>
+		</div>		
+		<button type="button" id="btnSetup" class="btn btn-info btn-lg" onclick="changeValue()">Troca Setup</button>
+	</body>
+<style type="text/css">
+	#btnSetup{
+		margin-left: 110px;
+	} 
+	.form-control{
+		width:200px;
+	}
+	.form-group{
+		margin-top: 30px;
+	}
+</style>
+<script type="text/javascript">
+	function changeValue(){
+		//HTML5 local storage 
+		//localStorage.setItem("ip","192.168.2.113");
+		//localStorage.setItem("idAluno","4");
+
+		// Receiving the data:
+		//localStorage.getItem("variableName");
+		var ipInput = document.getElementById("ip");
+	//	var idAlunoInput = document.getElementById("login")
+
+		//if (idAlunoInput == "") console.log("nulllllll PORRA");
+		localStorage.setItem("ip",ipInput.value);
+	//	localStorage.setItem("idAluno",idAlunoInput.value);
+		
+		console.log ("ip: " + ipInput.value);
+	//	console.log ("idAluno: " + idAlunoInput.value);
+	}	
+
+</script>
+</html>
