@@ -49,6 +49,22 @@
 		
 		console.log ("ip: " + ipInput.value);
 	//	console.log ("idAluno: " + idAlunoInput.value);
+		local = location.toString();
+		local = local.split("/");
+		console.log (local[5]);
+		console.log(local.length);
+		redirect = "";
+		for (i=0; i<local.length-1; i++) {
+			//console.log(redirect);
+			if (i) redirect = redirect + "/" + local[i];
+			else redirect =  local[i];
+
+			//if (i==0) redirect =  local[i];
+			//else redirect = redirect + "/" + local[i];
+		}
+		redirect = redirect + "/login.html";
+		window.location = redirect;
+		//console.log("redirect: "+ redirect);
 	}	
 
 </script>

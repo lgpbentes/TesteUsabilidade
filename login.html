@@ -1,6 +1,6 @@
 <html>
 	<head>
-        <title>Setup</title>
+        <title>Login</title>
 		<meta name="viewport" content="width = device-width, height = device-height, maximum-scale = 1.0, minimum-scale = 1.0" />
 		<meta http-equiv="Content-Type" content="application/html; charset=UTF-8" />
 	<script src="js/jquery.min.js"></script>
@@ -19,7 +19,7 @@
   				<input type="text" class="form-control" id="login">
 			</div>
 		</div>		
-		<button type="button" id="btnSetup" class="btn btn-info btn-lg" onclick="changeValue()">Troca Setup</button>
+		<button type="button" id="btnSetup" class="btn btn-info btn-lg" onclick="changeValue()">Entrar</button>
 	</body>
 <style type="text/css">
 	#btnSetup{
@@ -49,6 +49,23 @@
 		
 		//console.log ("ip: " + ipInput.value);
 		console.log ("idAluno: " + idAlunoInput.value);
+		
+		local = location.toString();
+		local = local.split("/");
+		console.log (local[5]);
+		console.log(local.length);
+		redirect = "";
+		for (i=0; i<local.length-1; i++) {
+			//console.log(redirect);
+			if (i) redirect = redirect + "/" + local[i];
+			else redirect =  local[i];
+
+			//if (i==0) redirect =  local[i];
+			//else redirect = redirect + "/" + local[i];
+		}
+		redirect = redirect + "/index.html";
+		window.location = redirect;
+
 	}	
 
 </script>
