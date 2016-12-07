@@ -2,15 +2,15 @@ var debug = true;
 var timer;
 var currentScreen = "";
 var idClass = "";
-var ip = "localhost"; 
-var idAluno = "8";
+var ip = localStorage.getItem("ip");
+var idAluno = localStorage.getItem("idAluno"); 
 
 var multioption = {
     status: false,
     id: "Q1-hard",
     len: "1",
     question: ["Q1-hard","Q2-hard","Q3-hard"]
-} 
+}
 
 onload =  function(e){
 
